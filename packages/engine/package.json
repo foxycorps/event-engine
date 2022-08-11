@@ -1,6 +1,9 @@
 {
     "name": "@foxycorps/event-engine",
     "version": "1.0.0",
+    "publishConfig": {
+        "access": "public"
+    },
     "files": [
         "dist/*"
     ],
