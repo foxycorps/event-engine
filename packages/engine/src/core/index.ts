@@ -1,7 +1,7 @@
 import { NanoEvent } from '@foxycorps/nanoevent'
 import type { Common, EventDispatcher, InputEngine as InputEngineType, OutputEngine as OutputEngineType } from '../types';
 
-export default class EventEngine extends NanoEvent implements EventDispatcher {
+export class EventEngine extends NanoEvent implements EventDispatcher {
     inputs: InputEngineType[];
     outputs: OutputEngineType[];
 
@@ -85,3 +85,4 @@ export default class EventEngine extends NanoEvent implements EventDispatcher {
 
 export { default as OutputEngine } from './output'
 export { default as InputEngine } from './input'
+export default EventEngine

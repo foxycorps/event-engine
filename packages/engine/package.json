@@ -9,27 +9,6 @@
     ],
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "typesVersions": {
-        "*": {
-            "inputs": [
-                "./dist/inputs.d.ts"
-            ],
-            "outputs": [
-                "./dist/output.d.ts"
-            ]
-        }
-    },
-    "exports": {
-        ".": "./dist/index.js",
-        "./inputs": {
-            "import": "./dist/inputs.js",
-            "types": "./dist/inputs.d.ts"
-        },
-        "./outputs": {
-            "import": "./dist/outputs.js",
-            "types": "./dist/outputs.d.ts"
-        }
-    },
     "scripts": {
         "dev": "tsup --watch",
         "build": "tsup",
