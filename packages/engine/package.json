@@ -9,6 +9,17 @@
     ],
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js",
+        "./inputs": {
+            "import": "./dist/inputs.js",
+            "types": "./dist/inputs.d.ts"
+        },
+        "./outputs": {
+            "import": "./dist/outputs.d.ts",
+            "types": "./dist/outputs.d.ts"
+        }
+    },
     "scripts": {
         "dev": "tsup --watch",
         "build": "tsup",
