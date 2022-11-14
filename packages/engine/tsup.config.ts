@@ -12,6 +12,7 @@ export default defineConfig([
     {
         name: "event-engine",
         entry: ['src/index.ts'],
+        "noExternal": ['@foxycorps/nanoevent'],
         ...options
     }
 ])

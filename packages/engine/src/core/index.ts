@@ -12,17 +12,17 @@ export class EventEngine extends NanoEvent implements EventDispatcher {
         this.inputs = inputs;
         this.outputs = outputs;
 
-        this.preprocess();
-        this.process();
+        this.prestart();
+        this.start();
         this.triggerReady();
         this.triggerTick();
     }
 
-    private preprocess(): void {
+    private prestart(): void {
         [...this.inputs, ...this.outputs].forEach((source: Common) => source.beforeRegister())
     }
 
-    private process(): void {
+    private start(): void {
         for (const output of this.outputs) {
             output.registerEngine(this);
         }
