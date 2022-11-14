@@ -1,6 +1,6 @@
 {
     "name": "@foxycorps/event-engine",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "publishConfig": {
         "access": "public"
     },
@@ -19,6 +19,7 @@
     },
     "devDependencies": {
         "@types/react": "*",
+        "axios": "*",
         "tsup": "*",
         "typescript": "^4.7.4",
         "vitest": "*"
