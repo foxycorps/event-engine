@@ -1,6 +1,4 @@
-import { NanoEvent } from "@foxycorps/nanoevent";
-// @ts-ignore
-import React from 'react';
+import NanoEvent from "@foxycorps/nanoevent";
 import { InputEngine, OutputEngine } from "../core";
 
 interface CommonProperties {

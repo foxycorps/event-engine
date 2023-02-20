@@ -1,4 +1,4 @@
-import { NanoEvent } from "@foxycorps/nanoevent"
+import NanoEvent from "@foxycorps/nanoevent"
 // @ts-ignore
 import React from 'react';
 import { InputEngine, OutputEngine } from "../core";
@@ -79,10 +79,7 @@ interface ReactOutputState {
 
 export class ReactOutput extends OutputEngine {
     private options: ReactOutputProperties;
-    private state: ReactOutputState = {
-        component: undefined,
-        props: {}
-    }
+    private state: ReactOutputState;
 
     private internalEvents: NanoEvent;
 
@@ -90,6 +87,10 @@ export class ReactOutput extends OutputEngine {
         super("react-output");
         this.options = options;
         this.internalEvents = new NanoEvent();
+        this.state = {
+            component: undefined,
+            props: {}
+        }
     }
 
     private buildComponent(): any {
@@ -126,10 +127,12 @@ export class ReactOutput extends OutputEngine {
     }
 
     onUpdate(callback: ((data: unknown) => void)): void {
-        this.internalEvents.on(this.options.stateChangeListener, callback);
+        this.internalEvents.on(this.options.stateChangeListener, (data: unknown) => {
+            callback(data);
+        });
     }
 
     requestLatest(callback: ((data: unknown) => void)): void {
-        callback(this.buildComponent)
+        callback(this.buildComponent())
     }
 }

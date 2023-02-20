@@ -1,7 +1,7 @@
 import { InputEngine } from "../core";
 // @ts-ignore
 import axios from 'axios';
-import { NanoEvent } from "@foxycorps/nanoevent";
+import NanoEvent from "@foxycorps/nanoevent";
 
 type methodType = "get" | "put" | "post" | "delete" | "patch";
 
@@ -87,7 +87,7 @@ export class HttpInput extends InputEngine {
     protected sendRequest() {
         this.internalEventSystem.emit(`${this.options.sentEvent}`, { loading: true });
 
-        axios[this.options.method](this.options.url).then((data: any) => {
+        axios[this.options.method!](this.options.url).then((data: any) => {
             this.internalEventSystem.emit(`${this.options.receivedEvent}`, data.data);
         }).catch((error: any) => {
             this.internalEventSystem.emit(`${this.options.failureEvent}`, { error: error?.msg ?? error?.message ?? error })

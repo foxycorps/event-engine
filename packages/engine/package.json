@@ -15,7 +15,7 @@
         "test": ""
     },
     "dependencies": {
-        "@foxycorps/nanoevent": "^4.1.1"
+        "@foxycorps/nanoevent": "^4.2.0"
     },
     "devDependencies": {
         "@types/react": "*",

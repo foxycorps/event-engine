@@ -1,4 +1,4 @@
-import { NanoEvent } from '@foxycorps/nanoevent'
+import NanoEvent from '@foxycorps/nanoevent'
 import type { Common, EventDispatcher, InputEngine as InputEngineType, OutputEngine as OutputEngineType } from '../types';
 
 export class EventEngine extends NanoEvent implements EventDispatcher {
